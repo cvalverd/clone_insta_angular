@@ -10,20 +10,20 @@
         </div>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-4 text-center w-100 needs-validation" novalidate>
           <div class="form-group form-floating mb-3">
-            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Introduce tu email" required>
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Introduce tu email" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['email'].errors, 'is-valid': submitted && registerForm.controls['email'].valid }">
             <label for="email">Email</label>
-            <div class="invalid-feedback">Por favor, introduce un email válido.</div>
+            <div *ngIf="submitted && registerForm.controls['email'].errors" class="invalid-feedback">Por favor, introduce un email válido.</div>
           </div>
           <div class="form-group form-floating mb-3">
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Introduce tu nombre completo" required>
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Introduce tu nombre completo" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['name'].errors, 'is-valid': submitted && registerForm.controls['name'].valid }">
             <label for="name">Nombre completo</label>
-            <div class="invalid-feedback">Por favor, introduce tu nombre completo.</div>
+            <div *ngIf="submitted && registerForm.controls['name'].errors" class="invalid-feedback">Por favor, introduce tu nombre completo.</div>
           </div>
           <div class="form-group mb-3 position-relative">
             <div class="input-group">
               <div class="form-floating">
-                <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" required>
-                <div class="invalid-feedback">La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.</div>
+                <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['password'].errors, 'is-valid': submitted && registerForm.controls['password'].valid }">
+                <div *ngIf="submitted && registerForm.controls['password'].errors" class="invalid-feedback">La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.</div>
                 <label for="pwd">Contraseña</label>
               </div>
             </div>
@@ -31,21 +31,21 @@
           <div class="form-group mb-3 position-relative">
             <div class="input-group">
               <div class="form-floating">
-                <input type="password" formControlName="repeatPassword" class="form-control" id="repeat-pwd" placeholder="Repite tu contraseña" required>
-                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                <input type="password" formControlName="repeatPassword" class="form-control" id="repeat-pwd" placeholder="Repite tu contraseña" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['repeatPassword'].errors, 'is-valid': submitted && registerForm.controls['repeatPassword'].valid }">
+                <div *ngIf="submitted && registerForm.controls['repeatPassword'].errors" class="invalid-feedback">Las contraseñas no coinciden.</div>
                 <label for="repeat-pwd">Repetir contraseña</label>
               </div>
             </div>
           </div>
           <div class="form-group form-floating mb-3">
-            <input type="text" formControlName="username" class="form-control" id="username" placeholder="Introduce tu nombre de usuario" required>
+            <input type="text" formControlName="username" class="form-control" id="username" placeholder="Introduce tu nombre de usuario" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['username'].errors, 'is-valid': submitted && registerForm.controls['username'].valid }">
             <label for="username">Nombre de usuario</label>
-            <div class="invalid-feedback">Por favor, introduce un nombre de usuario.</div>
+            <div *ngIf="submitted && registerForm.controls['username'].errors" class="invalid-feedback">Por favor, introduce un nombre de usuario.</div>
           </div>
           <div class="form-group form-floating mb-3">
-            <input type="date" formControlName="birthdate" class="form-control" id="date" placeholder="Introduce tu fecha de nacimiento" required>
+            <input type="date" formControlName="birthdate" class="form-control" id="date" placeholder="Introduce tu fecha de nacimiento" required [ngClass]="{ 'is-invalid': submitted && registerForm.controls['birthdate'].errors, 'is-valid': submitted && registerForm.controls['birthdate'].valid }">
             <label for="date">Fecha de nacimiento</label>
-            <div class="invalid-feedback">Debes tener al menos 16 años para registrarte.</div>
+            <div *ngIf="submitted && registerForm.controls['birthdate'].errors" class="invalid-feedback">Debes tener al menos 16 años para registrarte.</div>
           </div>
           <button type="submit" class="btn btn-submit btn-primary">Registrarse</button>
         </form>

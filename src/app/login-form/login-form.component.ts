@@ -31,15 +31,12 @@ export class LoginFormComponent implements OnInit {
   }
 
   iniciarSesion(emailOrUsername: string, password: string): boolean {
-    console.log('Intentando iniciar sesión:', { emailOrUsername, password });
     const usuario = this.usuarios.find(user => (user.email === emailOrUsername || user.username === emailOrUsername) && user.password === password);
     if (usuario) {
       this.showToast('Inicio de sesión exitoso.', 'success');
-      console.log('Inicio de sesión exitoso:', usuario);
       return true;
     } else {
       this.showToast('Email/Usuario o contraseña incorrectos.', 'danger');
-      console.log('Email/Usuario o contraseña incorrectos.');
       return false;
     }
   }
@@ -53,7 +50,6 @@ export class LoginFormComponent implements OnInit {
         const emailOrUsername = emailOrUsernameControl.value;
         const password = passwordControl.value;
 
-        console.log('Form Values:', { emailOrUsername, password });
 
         const inicioExitoso = this.iniciarSesion(emailOrUsername, password);
         if (inicioExitoso) {
