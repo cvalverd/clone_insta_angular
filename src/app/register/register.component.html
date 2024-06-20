@@ -1,0 +1,61 @@
+<section class="container">
+  <div class="container-register mt-5">
+    <div class="row w-100">
+      <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+        <app-phone-frame></app-phone-frame>
+      </div>
+      <div class="col-md-6 px-5 d-flex flex-column align-items-center">
+        <div class="mb-5 text-center">
+          <img src="assets/img/Instagram_logo.svg" alt="Instagram Logo" class="logo">
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-4 text-center w-100 needs-validation" novalidate>
+          <div class="form-group form-floating mb-3">
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="Introduce tu email" required>
+            <label for="email">Email</label>
+            <div class="invalid-feedback">Por favor, introduce un email válido.</div>
+          </div>
+          <div class="form-group form-floating mb-3">
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Introduce tu nombre completo" required>
+            <label for="name">Nombre completo</label>
+            <div class="invalid-feedback">Por favor, introduce tu nombre completo.</div>
+          </div>
+          <div class="form-group mb-3 position-relative">
+            <div class="input-group">
+              <div class="form-floating">
+                <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" required>
+                <div class="invalid-feedback">La contraseña debe tener al menos 8 caracteres, incluyendo una mayúscula, una minúscula, un número y un carácter especial.</div>
+                <label for="pwd">Contraseña</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-3 position-relative">
+            <div class="input-group">
+              <div class="form-floating">
+                <input type="password" formControlName="repeatPassword" class="form-control" id="repeat-pwd" placeholder="Repite tu contraseña" required>
+                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                <label for="repeat-pwd">Repetir contraseña</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-floating mb-3">
+            <input type="text" formControlName="username" class="form-control" id="username" placeholder="Introduce tu nombre de usuario" required>
+            <label for="username">Nombre de usuario</label>
+            <div class="invalid-feedback">Por favor, introduce un nombre de usuario.</div>
+          </div>
+          <div class="form-group form-floating mb-3">
+            <input type="date" formControlName="birthdate" class="form-control" id="date" placeholder="Introduce tu fecha de nacimiento" required>
+            <label for="date">Fecha de nacimiento</label>
+            <div class="invalid-feedback">Debes tener al menos 16 años para registrarte.</div>
+          </div>
+          <button type="submit" class="btn btn-submit btn-primary">Registrarse</button>
+        </form>
+        <div class="separator my-4">
+          <span class="separator-text">O</span>
+        </div>
+        <button type="button" class="btn btn-submit btn-secondary">Registrarse con Facebook</button>
+        <p class="mt-4">¿Tienes una cuenta? <a routerLink="/home" class="link-dark">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

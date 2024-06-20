@@ -1,0 +1,48 @@
+.logo {
+  width: 150px;
+}
+
+#togglePassword, #toggleRepeatPassword {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  --bs-btn-hover-color: #212529;
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #aaa;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.separator-text {
+  font-size: 1em;
+  color: #555;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+a.link-dark {
+  cursor: pointer;
+}
