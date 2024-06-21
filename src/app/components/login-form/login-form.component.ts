@@ -34,6 +34,7 @@ export class LoginFormComponent implements OnInit {
     const usuario = this.usuarios.find(user => (user.email === emailOrUsername || user.username === emailOrUsername) && user.password === password);
     if (usuario) {
       this.showToast('Inicio de sesión exitoso.', 'success');
+      this.router.navigate(['/home']);
       return true;
     } else {
       this.showToast('Email/Usuario o contraseña incorrectos.', 'danger');

@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { MainComponent } from './components/main/main.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
-  { path: 'home', component: MainComponent },
+  { path: 'main', component: MainComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginFormComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'home', component: HomeComponent },
+  { path: '**', redirectTo: 'main', pathMatch: 'full' }
 ];
